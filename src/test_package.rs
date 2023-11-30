@@ -107,7 +107,7 @@ impl PackageBuilder {
 
         let encoded_manifest = toml::to_string_pretty(&self.manifest).unwrap();
         archive
-            .start_file("wally.toml", FileOptions::default())
+            .start_file("rbxpm.toml", FileOptions::default())
             .unwrap();
         archive.write_all(encoded_manifest.as_bytes()).unwrap();
 

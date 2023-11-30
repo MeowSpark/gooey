@@ -1,0 +1,41 @@
+# Installation
+
+## With Aftman (preferred)
+[Aftman][aftman] is the toolchain manager we recommend. You can use it to install rbxpm:
+
+In your project (preferred)
+```bash
+aftman init
+aftman add UpliftGames/rbxpm
+aftman install
+```
+
+Or install rbxpm globally
+```bash
+aftman add --global UpliftGames/rbxpm
+aftman install
+```
+
+[aftman]: https://github.com/LPGhatguy/aftman
+
+## Homebrew
+[Homebrew][homebrew] is also a convenient way to install rbxpm! (only for MacOS/Linux)
+```bash
+brew install rbxpm
+```
+
+[homebrew]: https://brew.sh/
+
+## From GitHub
+Pre-built binaries are available for Windows, macOS, and Linux from the [GitHub Releases Page for rbxpm][releases].
+
+[releases]: https://github.com/UpliftGames/rbxpm/releases
+
+## From Source
+It's straightforward to compile rbxpm from source. rbxpm requires Rust 1.51.0 or newer.
+
+Clone the repository and use:
+
+```bash
+cargo install --locked --path .
+```

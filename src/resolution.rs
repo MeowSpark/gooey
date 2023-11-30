@@ -367,7 +367,7 @@ mod tests {
         test_project(registry, root)
     }
 
-    /// When there are shared dependencies, Wally should select the same
+    /// When there are shared dependencies, rbxpm should select the same
     /// dependency. Here, A depends on B and C, which both in turn depend on D.
     #[test]
     fn unified_dependencies() -> anyhow::Result<()> {

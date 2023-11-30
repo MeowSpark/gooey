@@ -1,6 +1,6 @@
 use std::path::Path;
 
-use libwally::{Args, ManifestToJsonSubcommand, Subcommand};
+use librbxpm::{Args, ManifestToJsonSubcommand, Subcommand};
 
 #[test]
 fn minimal() {

@@ -1,5 +1,5 @@
 [package]
-name = "wally"
+name = "rbxpm"
 description = "Package manager for Roblox"
 version = "0.3.2"
 license = "MPL-2.0"
@@ -9,20 +9,20 @@ edition = "2018"
 [workspace]
 members = [
     ".",
-    "wally-registry-backend",
+    "rbxpm-registry-backend",
 ]
 
 default-members = [
     ".",
-    "wally-registry-backend",
+    "rbxpm-registry-backend",
 ]
 
 [lib]
-name = "libwally"
+name = "librbxpm"
 path = "src/lib.rs"
 
 [[bin]]
-name = "wally"
+name = "rbxpm"
 path = "src/main.rs"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html

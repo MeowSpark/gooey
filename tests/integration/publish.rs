@@ -1,14 +1,14 @@
 use std::path::Path;
 
 use fs_err::File;
-use libwally::{
+use librbxpm::{
     git_util, package_contents::PackageContents, Args, GlobalOptions, PublishSubcommand, Subcommand,
 };
 use serial_test::serial;
 use tempfile::tempdir;
 
 /// If the user tries to publish without providing any auth tokens
-/// then we should prompt them to provide a token via 'wally login'
+/// then we should prompt them to provide a token via 'rbxpm login'
 #[test]
 #[serial]
 fn check_prompts_auth() {
@@ -35,13 +35,13 @@ fn check_prompts_auth() {
     let error = args.run().expect_err("Expected publish to return an error");
 
     assert!(
-        error.to_string().contains("wally login"),
+        error.to_string().contains("rbxpm login"),
         "Expected error message prompting user to login. Instead we got: {:#}",
         error
     )
 }
 
-/// If the names in wally.toml and default.project.json are mismatched then
+/// If the names in rbxpm.toml and default.project.json are mismatched then
 /// publish should edit the default.project.json during upload to match
 #[test]
 fn check_mismatched_names() {
@@ -64,7 +64,7 @@ fn check_mismatched_names() {
     assert_eq!(project_name, "mismatched-name");
 }
 
-/// If the private field in wally.toml is set to true, it should not publish
+/// If the private field in rbxpm.toml is set to true, it should not publish
 /// the package.
 #[test]
 fn check_private_field() {

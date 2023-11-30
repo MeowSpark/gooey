@@ -11,7 +11,7 @@
 
 ## About
 
-rbxpm is a fork of Wally; a Roblox package manager. This fork intends to resolve common (and unresolved) pain points, and limitations, and introduce new features.
+rbxpm is a fork of rbxpm; a Roblox package manager. This fork intends to resolve common (and unresolved) pain points, and limitations, and introduce new features.
 
 ### Differences
 - Support path dependencies
@@ -23,11 +23,11 @@ rbxpm is a fork of Wally; a Roblox package manager. This fork intends to resolve
 	- Achieves a major missing feature from Rotriever
 - Support overriding dependencies
 - More feature parity to Cargo & Rotriever. (Includes all of above)
-- Clean up general UX issues ([Wally's GitHub already has various examples](https://github.com/UpliftGames/wally/issues)).
+- Clean up general UX issues ([rbxpm's GitHub already has various examples](https://github.com/UpliftGames/rbxpm/issues)).
 	- Support Git normally, regardless of configuration (config type, auth type, etc.)
 	- UX Behavior issues
 ### Why?
-I have started this fork, because of some of the above issues. Many of which, I continuously run into. A simple easy-to-use solution is important to me, so running various patches after installing/updating wally packages is getting unreasonable.  
+I have started this fork, because of some of the above issues. Many of which, I continuously run into. A simple easy-to-use solution is important to me, so running various patches after installing/updating rbxpm packages is getting unreasonable.  
 
 ## Installation
 
@@ -52,13 +52,13 @@ TBD, but commands should remain the same and be similar to Cargo's commands.
 ## File Formats
 
 ### Manifest Format
-TBD, but will be fully backward compatible with Wally's and should remain similar to Cargo's and Rotriever's Manifest.
+TBD, but will be fully backward compatible with rbxpm's and should remain similar to Cargo's and Rotriever's Manifest.
 
 ### Lockfile Format
 TBD, but will likely be a different structure.
 
 ## Registries
-TBD. Expect support with Wally's registry in some way.
+TBD. Expect support with rbxpm's registry in some way.
 
 ## License
 

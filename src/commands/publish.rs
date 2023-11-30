@@ -58,7 +58,7 @@ impl PublishSubcommand {
         let auth = match self.token {
             Some(token) => token,
             None => AuthStore::get_token(api.as_str())?
-                .with_context(|| "Authentication is required to publish, use `wally login`")?,
+                .with_context(|| "Authentication is required to publish, use `rbxpm login`")?,
         };
 
         println!(
@@ -77,7 +77,7 @@ impl PublishSubcommand {
         let response = client
             .post(api.join("/v1/publish")?)
             .header("accept", "application/json")
-            .header("Wally-Version", VERSION)
+            .header("rbxpm-Version", VERSION)
             .bearer_auth(auth)
             .body(contents.data().to_owned())
             .send()?;

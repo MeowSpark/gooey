@@ -202,7 +202,7 @@ impl InstallationContext {
             format_err!(indoc! {r#"
                 A server or dev dependency is depending on a shared dependency.
                 To link these packages correctly you must declare where shared
-                packages are placed in the roblox datamodel in your wally.toml.
+                packages are placed in the roblox datamodel in your rbxpm.toml.
                 
                 This typically looks like:
 
@@ -228,7 +228,7 @@ impl InstallationContext {
             format_err!(indoc! {r#"
                 A dev dependency is depending on a server dependency.
                 To link these packages correctly you must declare where server
-                packages are placed in the roblox datamodel in your wally.toml.
+                packages are placed in the roblox datamodel in your rbxpm.toml.
                 
                 This typically looks like:
 

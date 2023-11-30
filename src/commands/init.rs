@@ -10,13 +10,13 @@ use crate::manifest::MANIFEST_FILE_NAME;
 const DEFAULT_MANIFEST: &str = r#"[package]
 name = "placeholder/placeholder"
 version = "0.1.0"
-registry = "https://github.com/UpliftGames/wally-index"
+registry = "https://github.com/UpliftGames/rbxpm-index"
 realm = "shared"
 
 [dependencies]
 "#;
 
-/// Initialize a new Wally project.
+/// Initialize a new rbxpm project.
 #[derive(Debug, StructOpt)]
 pub struct InitSubcommand {
     /// The path to the project to initialize. Defaults to the current
@@ -35,7 +35,7 @@ impl InitSubcommand {
 
         match fs_err::metadata(&manifest_path) {
             Ok(_) => bail!(
-                "There is already a Wally project in this directory. Manifest file ({}) already exists.",
+                "There is already a rbxpm project in this directory. Manifest file ({}) already exists.",
                 MANIFEST_FILE_NAME
             ),
 

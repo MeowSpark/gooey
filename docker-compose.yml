@@ -4,12 +4,12 @@ services:
   backend:
     build:
       context: .
-      dockerfile: wally-registry-backend/Dockerfile
+      dockerfile: rbxpm-registry-backend/Dockerfile
     ports:
       - "8000:8000"
 
   frontend:
-    build: wally-registry-frontend
+    build: rbxpm-registry-frontend
     ports:
       - "8001:8000"
     links:

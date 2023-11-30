@@ -12,7 +12,7 @@ use crate::manifest::Manifest;
 
 static EXCLUDED_GLOBS: &[&str] = &[
     ".*",
-    "wally.lock",
+    "rbxpm.lock",
     "Packages",
     "ServerPackages",
     "DevPackages",
@@ -43,7 +43,7 @@ impl PackageContents {
             })?;
 
             // Zips embed \ from windows paths causing incorrect extraction on unix operating
-            // systems; we must sanitise here. See: https://github.com/UpliftGames/wally/issues/15
+            // systems; we must sanitise here. See: https://github.com/UpliftGames/rbxpm/issues/15
             // This may be fixed in the zip crate. See: https://github.com/zip-rs/zip/issues/253
             let archive_name = str::replace(archive_name, "\\", "/");
 
@@ -65,7 +65,7 @@ impl PackageContents {
                         log::info!(
                             "The project and package names are mismatched. The project name in \
                             `default.project.json` has been renamed to '{}' in the uploaded package \
-                            to match the name provided by `wally.toml`",
+                            to match the name provided by `rbxpm.toml`",
                             package_name
                         );
 

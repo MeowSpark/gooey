@@ -2,15 +2,15 @@ use std::process::exit;
 
 use structopt::StructOpt;
 
-use libwally::Args;
+use librbxpm::Args;
 
 fn main() {
     let args = Args::from_args();
 
     let log_filter = match args.global.verbosity {
-        0 => "libwally=info",
-        1 => "libwally=debug",
-        2 => "libwally=trace",
+        0 => "librbxpm=info",
+        1 => "librbxpm=debug",
+        2 => "librbxpm=trace",
         _ => "trace",
     };
 
