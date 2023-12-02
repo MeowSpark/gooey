@@ -5,13 +5,18 @@
 
 * [Installation](#installation)
 * [Commands](#commands)
-* [File formats](#manifest-format)
+* [File formats](#file-formats)
 * [Registries](#registries)
 * [License](#license)
 
 ## About
 
-rbxpm is a fork of rbxpm; a Roblox package manager. This fork intends to resolve common (and unresolved) pain points, and limitations, and introduce new features.
+rbxpm is a fork of Wally; a Roblox package manager. This fork intends to resolve common (and unresolved) pain points, and limitations, and introduce new features.
+
+Additionally, rbxpm provides compatibly layers with the following other package managers manifest files:
+
+- `Rotriever.toml`
+- `Wally.toml`
 
 ### Differences
 - Support path dependencies
@@ -22,8 +27,8 @@ rbxpm is a fork of rbxpm; a Roblox package manager. This fork intends to resolve
 - Support a sub-set of [Cargo's workspaces](https://doc.rust-lang.org/stable/cargo/reference/workspaces.html).
 	- Achieves a major missing feature from Rotriever
 - Support overriding dependencies
-- More feature parity to Cargo & Rotriever. (Includes all of above)
-- Clean up general UX issues ([rbxpm's GitHub already has various examples](https://github.com/UpliftGames/rbxpm/issues)).
+- More feature parity to Cargo & Rotriever. (Includes all of the above)
+- Clean up general UX issues ([rbxpm's GitHub already has various examples](https://github.com/UpliftGames/Wally/issues)).
 	- Support Git normally, regardless of configuration (config type, auth type, etc.)
 	- UX Behavior issues
 ### Why?
@@ -52,13 +57,15 @@ TBD, but commands should remain the same and be similar to Cargo's commands.
 ## File Formats
 
 ### Manifest Format
-TBD, but will be fully backward compatible with rbxpm's and should remain similar to Cargo's and Rotriever's Manifest.
+TBD, should remain similar to Cargo's, Rotriever's, and Wally's manifest.
+
+The main intent of this (package manager) is to combine & expand support, so compatability layers for using `Rotriever.toml` and `Wally.toml` files should be provided.
 
 ### Lockfile Format
 TBD, but will likely be a different structure.
 
 ## Registries
-TBD. Expect support with rbxpm's registry in some way.
+A new registry system that falls back to Wally is something to consider, but this is TBD. For now, this would use the existing Wally registry backend (& options to now use Git URLs/File Paths)
 
 ## License
 

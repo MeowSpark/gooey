@@ -2178,6 +2178,73 @@ dependencies = [
 ]
 
 [[package]]
+name = "rbxpm"
+version = "0.3.2"
+dependencies = [
+ "anyhow",
+ "blake3",
+ "crossterm",
+ "dirs",
+ "env_logger",
+ "fs-err",
+ "git2",
+ "globset",
+ "hex",
+ "indicatif",
+ "indoc",
+ "insta",
+ "log",
+ "once_cell",
+ "opener",
+ "reqwest",
+ "rpassword",
+ "semver 0.11.0",
+ "serde",
+ "serde_json",
+ "serial_test",
+ "structopt",
+ "tempfile",
+ "tokio",
+ "toml 0.5.8",
+ "toml_edit 0.2.0",
+ "ubyte",
+ "url",
+ "walkdir",
+ "whoami",
+ "zip",
+]
+
+[[package]]
+name = "rbxpm-registry-backend"
+version = "0.3.2"
+dependencies = [
+ "anyhow",
+ "async-trait",
+ "cloud-storage-lite",
+ "constant_time_eq",
+ "figment",
+ "fs-err",
+ "futures",
+ "git2",
+ "glob",
+ "moka",
+ "rbxpm",
+ "reqwest",
+ "rocket",
+ "rusoto_core",
+ "rusoto_s3",
+ "semver 0.11.0",
+ "serde",
+ "serde_json",
+ "tantivy",
+ "tempfile",
+ "tokio",
+ "url",
+ "walkdir",
+ "zip",
+]
+
+[[package]]
 name = "redox_syscall"
 version = "0.1.57"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3637,73 +3704,6 @@ dependencies = [
  "same-file",
  "winapi",
  "winapi-util",
-]
-
-[[package]]
-name = "rbxpm"
-version = "0.3.2"
-dependencies = [
- "anyhow",
- "blake3",
- "crossterm",
- "dirs",
- "env_logger",
- "fs-err",
- "git2",
- "globset",
- "hex",
- "indicatif",
- "indoc",
- "insta",
- "log",
- "once_cell",
- "opener",
- "reqwest",
- "rpassword",
- "semver 0.11.0",
- "serde",
- "serde_json",
- "serial_test",
- "structopt",
- "tempfile",
- "tokio",
- "toml 0.5.8",
- "toml_edit 0.2.0",
- "ubyte",
- "url",
- "walkdir",
- "whoami",
- "zip",
-]
-
-[[package]]
-name = "rbxpm-registry-backend"
-version = "0.3.2"
-dependencies = [
- "anyhow",
- "async-trait",
- "cloud-storage-lite",
- "constant_time_eq",
- "figment",
- "fs-err",
- "futures",
- "git2",
- "glob",
- "moka",
- "reqwest",
- "rocket",
- "rusoto_core",
- "rusoto_s3",
- "semver 0.11.0",
- "serde",
- "serde_json",
- "tantivy",
- "tempfile",
- "tokio",
- "url",
- "walkdir",
- "rbxpm",
- "zip",
 ]
 
 [[package]]
