@@ -8,7 +8,7 @@ registry = "test"
 
 [[package]]
 name = "diamond-graph/direct-dependency-a"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [["Indirect", "diamond-graph/indirect-dependency-a@0.1.1"]]
 
 [[package]]
@@ -29,5 +29,5 @@ dependencies = []
 [[package]]
 name = "diamond-graph/root"
 version = "0.1.0"
-dependencies = [["A", "diamond-graph/direct-dependency-a@0.1.0"], ["B", "diamond-graph/direct-dependency-b@0.1.0"]]
+dependencies = [["A", "diamond-graph/direct-dependency-a@0.1.1"], ["B", "diamond-graph/direct-dependency-b@0.1.0"]]
 

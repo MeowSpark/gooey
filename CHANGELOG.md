@@ -17,28 +17,28 @@
 * Publishing packages >2MB now bails at the cli ([#121])
 * Other small misc changes related to repo upkeep
 
-[#9]: https://github.com/UpliftGames/rbxpm/issues/9
-[#105]: https://github.com/UpliftGames/rbxpm/issues/105
-[#75]: https://github.com/UpliftGames/rbxpm/pull/75
-[#80]: https://github.com/UpliftGames/rbxpm/pull/80
-[#131]: https://github.com/UpliftGames/rbxpm/pull/131
-[#102]: https://github.com/UpliftGames/rbxpm/pull/102
-[#76]: https://github.com/UpliftGames/rbxpm/pull/76
-[#84]: https://github.com/UpliftGames/rbxpm/pull/84
-[#90]: https://github.com/UpliftGames/rbxpm/pull/90
-[#109]: https://github.com/UpliftGames/rbxpm/pull/109
-[#110]: https://github.com/UpliftGames/rbxpm/pull/110
-[#112]: https://github.com/UpliftGames/rbxpm/pull/112
-[#130]: https://github.com/UpliftGames/rbxpm/pull/130
-[#133]: https://github.com/UpliftGames/rbxpm/pull/133
-[#121]: https://github.com/UpliftGames/rbxpm/pull/121
+[#9]: https://github.com/UpliftGames/wally/issues/9
+[#105]: https://github.com/UpliftGames/wally/issues/105
+[#75]: https://github.com/UpliftGames/wally/pull/75
+[#80]: https://github.com/UpliftGames/wally/pull/80
+[#131]: https://github.com/UpliftGames/wally/pull/131
+[#102]: https://github.com/UpliftGames/wally/pull/102
+[#76]: https://github.com/UpliftGames/wally/pull/76
+[#84]: https://github.com/UpliftGames/wally/pull/84
+[#90]: https://github.com/UpliftGames/wally/pull/90
+[#109]: https://github.com/UpliftGames/wally/pull/109
+[#110]: https://github.com/UpliftGames/wally/pull/110
+[#112]: https://github.com/UpliftGames/wally/pull/112
+[#130]: https://github.com/UpliftGames/wally/pull/130
+[#133]: https://github.com/UpliftGames/wally/pull/133
+[#121]: https://github.com/UpliftGames/wally/pull/121
 
 ## 0.3.1 (2021-11-12)
 * Support for dev dependencies ([#63][63])
 * Clarified upgrade response for outdated cli clients
 * Clarified feedback on failure to resolve package
 
-[#63]: https://github.com/UpliftGames/rbxpm/pull/63
+[#63]: https://github.com/UpliftGames/wally/pull/63
 
 ## 0.3.0 (2021-11-11)
 * Fixed Windows generating invalid zip archives. ([#15][#15])
@@ -50,19 +50,19 @@
 * Frontend can search packages and display package info ([#55][#55])
 * Minimum rbxpm version enforcement by registry ([#57][#57])
 
-[#15]: https://github.com/UpliftGames/rbxpm/issues/15
-[#35]: https://github.com/UpliftGames/rbxpm/pull/35
-[#38]: https://github.com/UpliftGames/rbxpm/pull/38
-[#44]: https://github.com/UpliftGames/rbxpm/pull/44
-[#46]: https://github.com/UpliftGames/rbxpm/pull/46
-[#52]: https://github.com/UpliftGames/rbxpm/pull/52
-[#55]: https://github.com/UpliftGames/rbxpm/pull/55
-[#57]: https://github.com/UpliftGames/rbxpm/pull/57
+[#15]: https://github.com/UpliftGames/wally/issues/15
+[#35]: https://github.com/UpliftGames/wally/pull/35
+[#38]: https://github.com/UpliftGames/wally/pull/38
+[#44]: https://github.com/UpliftGames/wally/pull/44
+[#46]: https://github.com/UpliftGames/wally/pull/46
+[#52]: https://github.com/UpliftGames/wally/pull/52
+[#55]: https://github.com/UpliftGames/wally/pull/55
+[#57]: https://github.com/UpliftGames/wally/pull/57
 
 ## 0.2.1 (2021-10-01)
 * First iteration of rbxpm frontend. ([#32][#32])
 
-[#32]: https://github.com/UpliftGames/rbxpm/pull/32
+[#32]: https://github.com/UpliftGames/wally/pull/32
 
 ## 0.2.0 (2021-09-29)
 * Fixed package links between sibling packages. ([#17][#17])
@@ -73,18 +73,18 @@
 * More efficient use of reqwest. ([#27][#27])
 * Enforce a max length on package names. ([#28][#28])
 
-[#17]: https://github.com/UpliftGames/rbxpm/pull/17
-[#19]: https://github.com/UpliftGames/rbxpm/pull/19
-[#20]: https://github.com/UpliftGames/rbxpm/pull/20
-[#23]: https://github.com/UpliftGames/rbxpm/pull/23
-[#25]: https://github.com/UpliftGames/rbxpm/pull/25
-[#27]: https://github.com/UpliftGames/rbxpm/pull/27
-[#28]: https://github.com/UpliftGames/rbxpm/pull/28
+[#17]: https://github.com/UpliftGames/wally/pull/17
+[#19]: https://github.com/UpliftGames/wally/pull/19
+[#20]: https://github.com/UpliftGames/wally/pull/20
+[#23]: https://github.com/UpliftGames/wally/pull/23
+[#25]: https://github.com/UpliftGames/wally/pull/25
+[#27]: https://github.com/UpliftGames/wally/pull/27
+[#28]: https://github.com/UpliftGames/wally/pull/28
 
 ## 0.1.1 (2021-08-03)
 * Fixed `rbxpm install` failing due to a "file not found" error. ([#11][#11])
 
-[#11]: https://github.com/UpliftGames/rbxpm/pull/11
+[#11]: https://github.com/UpliftGames/wally/pull/11
 
 ## 0.1.0 (2021-08-03)
 * Initial release

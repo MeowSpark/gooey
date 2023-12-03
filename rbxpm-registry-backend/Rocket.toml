@@ -23,10 +23,10 @@ auth = { type = "unauthenticated" }
 # In the future, we'll support authenticating with GitHub.
 
 # The package index to use to store all of the package metadata.
-index_url = "https://github.com/UpliftGames/rbxpm-test-index"
+index_url = "https://github.com/UpliftGames/wally-test-index"
 #
 # Here's the production config:
-# index_url = "https://github.com/UpliftGames/rbxpm-index"
+# index_url = "https://github.com/UpliftGames/wally-index"
 
 [release]
 log_level = "normal"

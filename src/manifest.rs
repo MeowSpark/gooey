@@ -68,7 +68,7 @@ pub struct Package {
 
     /// The registry that this package should pull its dependencies from.
     ///
-    /// Example: `https://github.com/UpliftGames/rbxpm-test-index`
+    /// Example: `https://github.com/UpliftGames/wally-test-index`
     pub registry: String,
 
     /// The realms (`shared`, `server`, etc) that this package can be used in.
