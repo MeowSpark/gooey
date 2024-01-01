@@ -31,6 +31,7 @@ Additionally, rbxpm provides compatibly layers with the following other package 
 - Clean up general UX issues ([rbxpm's GitHub already has various examples](https://github.com/UpliftGames/Wally/issues)).
 	- Support Git normally, regardless of configuration (config type, auth type, etc.)
 	- UX Behavior issues
+- Support for Luau packages outside of Roblox (New name?)
 ### Why?
 I have started this fork, because of some of the above issues. Many of which, I continuously run into. A simple easy-to-use solution is important to me, so running various patches after installing/updating rbxpm packages is getting unreasonable.  
 
