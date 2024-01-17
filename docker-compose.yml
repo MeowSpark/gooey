@@ -4,12 +4,12 @@ services:
   backend:
     build:
       context: .
-      dockerfile: rbxpm-registry-backend/Dockerfile
+      dockerfile: gooey-registry-backend/Dockerfile
     ports:
       - "8000:8000"
 
   frontend:
-    build: rbxpm-registry-frontend
+    build: gooey-registry-frontend
     ports:
       - "8001:8000"
     links:

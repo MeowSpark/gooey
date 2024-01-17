@@ -88,7 +88,7 @@ impl PackageSourceProvider for Registry {
 
         let url = self.api_url()?.join(&path)?;
 
-        let mut request = self.client.get(url).header("rbxpm-Version", VERSION);
+        let mut request = self.client.get(url).header("gooey-Version", VERSION);
 
         if let Some(token) = self.auth_token()? {
             request = request.header(AUTHORIZATION, format!("Bearer {}", token));

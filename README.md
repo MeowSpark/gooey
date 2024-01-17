@@ -1,5 +1,5 @@
 <div align="center" width="800">
-    <h1>rbxpm, a package manager for Roblox</h1>
+    <h1>gooey, a package manager for Roblox</h1>
 </div>
 
 
@@ -11,9 +11,9 @@
 
 ## About
 
-rbxpm is a fork of Wally; a Roblox package manager. This fork intends to resolve common (and unresolved) pain points, and limitations, and introduce new features.
+gooey is a fork of Wally; a Roblox package manager. This fork intends to resolve common (and unresolved) pain points, and limitations, and introduce new features.
 
-Additionally, rbxpm provides compatibly layers with the following other package managers manifest files:
+Additionally, gooey provides compatibly layers with the following other package managers manifest files:
 
 - `Rotriever.toml`
 - `Wally.toml`
@@ -28,12 +28,12 @@ Additionally, rbxpm provides compatibly layers with the following other package 
 	- Achieves a major missing feature from Rotriever
 - Support overriding dependencies
 - More feature parity to Cargo & Rotriever. (Includes all of the above)
-- Clean up general UX issues ([rbxpm's GitHub already has various examples](https://github.com/UpliftGames/Wally/issues)).
+- Clean up general UX issues ([gooey's GitHub already has various examples](https://github.com/UpliftGames/Wally/issues)).
 	- Support Git normally, regardless of configuration (config type, auth type, etc.)
 	- UX Behavior issues
 - Support for Luau packages outside of Roblox (New name?)
 ### Why?
-I have started this fork, because of some of the above issues. Many of which, I continuously run into. A simple easy-to-use solution is important to me, so running various patches after installing/updating rbxpm packages is getting unreasonable.  
+I have started this fork, because of some of the above issues. Many of which, I continuously run into. A simple easy-to-use solution is important to me, so running various patches after installing/updating gooey packages is getting unreasonable.  
 
 ## Installation
 
@@ -44,7 +44,7 @@ TBD
 TBD
 
 ### From Source
-It's straightforward to compile rbxpm from source. rbxpm requires Rust 1.51.0 or newer.
+It's straightforward to compile gooey from source. gooey requires Rust 1.51.0 or newer.
 
 Clone the repository and use:
 

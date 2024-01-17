@@ -1,35 +1,35 @@
-# Contribution guide for rbxpm
+# Contribution guide for gooey
 
-Please respect that rbxpm is still in early stages of development. Things are messy. Time is precious. We may be slow.
+Please respect that gooey is still in early stages of development. Things are messy. Time is precious. We may be slow.
 
 - **Only start making a PR if you are confident with Rust or TS/React** (issues and comments are always appreciated though)
 - **Documentation for developing exists but may be outdated**
   - **Be prepared to figure out how to get things going**
   - **Fixing up any issues you do have getting going is a fantastic way to start helping!**
 - **Polish and refine PRs as much as possible and ensure they pass CI checks before requesting a review**
-- **If you want advise on a draft then discuss it in [#rbxpm] first.** 
+- **If you want advise on a draft then discuss it in [#gooey] first.** 
   
 Beyond that we are pretty chill, I promise! If you make good changes I will do my best to help you get them to the finish line.
 
-More info will be added here in the future. For now, if you want changes then please add an issue or create a PR! All issues, PRs, and comments on PRs are incredibly helpful. It may take us a while to get to your PR but if you feel it is important then please head to the [#rbxpm] channel in the Roblox OSS discord server (find this in the top right of [rbxpm.run](https://rbxpm.run/)) and let us know!
+More info will be added here in the future. For now, if you want changes then please add an issue or create a PR! All issues, PRs, and comments on PRs are incredibly helpful. It may take us a while to get to your PR but if you feel it is important then please head to the [#gooey] channel in the Roblox OSS discord server (find this in the top right of [gooey.run](https://gooey.run/)) and let us know!
 
-The current lead maintainer for rbxpm is @magnalite, that's me! If you want to work on a complex change or feel like your pr/issue has gone unnoticed for too long then give me a ping in [#rbxpm]!
+The current lead maintainer for gooey is @magnalite, that's me! If you want to work on a complex change or feel like your pr/issue has gone unnoticed for too long then give me a ping in [#gooey]!
 
-Finally, as you may have guessed by now... If in doubt head to [#rbxpm] and ask. Anyone is welcome to come in and ask anything about rbxpm.
+Finally, as you may have guessed by now... If in doubt head to [#gooey] and ask. Anyone is welcome to come in and ask anything about gooey.
 
-[#rbxpm]: https://discord.com/channels/385151591524597761/872225914149302333
+[#gooey]: https://discord.com/channels/385151591524597761/872225914149302333
 
-## Creating a new rbxpm release
+## Creating a new gooey release
 
 1. Change versions in 
     - `Cargo.toml`
     - `README.md`
-    - `rbxpm-registry-backend/Cargo.toml`
-    - `rbxpm-registry-frontend/package.json`
-    - `rbxpm-registry-frontend/src/pages/Install.mdx`
+    - `gooey-registry-backend/Cargo.toml`
+    - `gooey-registry-frontend/package.json`
+    - `gooey-registry-frontend/src/pages/Install.mdx`
 2. Run these commands to ensure the lockfiles are updates and tests pass
     - `cargo test`
-    - `npm --prefix rbxpm-registry-frontend i --package-lock-only`
+    - `npm --prefix gooey-registry-frontend i --package-lock-only`
 3. Update `CHANGELOG.md` to reflect what has been added to the new release
 4. Commit `git add . && git commit -m "Release vX.Y.Z"`
 5. Tag `git tag vX.Y.Z`

@@ -1,5 +1,5 @@
 [package]
-name = "rbxpm"
+name = "gooey"
 description = "Package manager for Roblox"
 version = "0.3.2"
 license = "MPL-2.0"
@@ -9,20 +9,20 @@ edition = "2018"
 [workspace]
 members = [
     ".",
-    "rbxpm-registry-backend",
+    "gooey-registry-backend",
 ]
 
 default-members = [
     ".",
-    "rbxpm-registry-backend",
+    "gooey-registry-backend",
 ]
 
 [lib]
-name = "librbxpm"
+name = "libgooey"
 path = "src/lib.rs"
 
 [[bin]]
-name = "rbxpm"
+name = "gooey"
 path = "src/main.rs"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html

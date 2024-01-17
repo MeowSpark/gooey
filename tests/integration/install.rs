@@ -1,5 +1,5 @@
 use super::temp_project::TempProject;
-use librbxpm::{Args, GlobalOptions, InstallSubcommand, Subcommand};
+use libgooey::{Args, GlobalOptions, InstallSubcommand, Subcommand};
 use std::path::Path;
 
 #[test]

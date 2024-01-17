@@ -1,6 +1,6 @@
 use std::path::Path;
 
-use librbxpm::{Args, ManifestToJsonSubcommand, Subcommand};
+use libgooey::{Args, ManifestToJsonSubcommand, Subcommand};
 
 #[test]
 fn minimal() {

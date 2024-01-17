@@ -16,7 +16,7 @@ realm = "shared"
 [dependencies]
 "#;
 
-/// Initialize a new rbxpm project.
+/// Initialize a new gooey project.
 #[derive(Debug, StructOpt)]
 pub struct InitSubcommand {
     /// The path to the project to initialize. Defaults to the current
@@ -35,7 +35,7 @@ impl InitSubcommand {
 
         match fs_err::metadata(&manifest_path) {
             Ok(_) => bail!(
-                "There is already a rbxpm project in this directory. Manifest file ({}) already exists.",
+                "There is already a gooey project in this directory. Manifest file ({}) already exists.",
                 MANIFEST_FILE_NAME
             ),
 

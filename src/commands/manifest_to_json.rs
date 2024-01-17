@@ -4,9 +4,9 @@ use structopt::StructOpt;
 
 use crate::manifest::Manifest;
 
-/// Print a rbxpm manifest as a line of JSON.
+/// Print a gooey manifest as a line of JSON.
 ///
-/// Used for creating the rbxpm package index.
+/// Used for creating the gooey package index.
 #[derive(Debug, StructOpt)]
 pub struct ManifestToJsonSubcommand {
     /// Path to the project to output the manifest of.

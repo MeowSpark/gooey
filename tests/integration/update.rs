@@ -1,7 +1,7 @@
 use crate::temp_project::TempProject;
 use fs_err as fs;
 use insta::assert_snapshot;
-use librbxpm::{
+use libgooey::{
     package_name::PackageName, package_req::PackageReq, Args, GlobalOptions, PackageSpec,
     Subcommand, UpdateSubcommand,
 };
@@ -21,10 +21,10 @@ fn generate_new_lockfile_if_missing() {
     assert!(result.is_ok(), "It should of ran without any errors.");
 
     assert!(
-        fs::metadata(project.path().join("rbxpm.lock"))
+        fs::metadata(project.path().join("gooey.lock"))
             .unwrap()
             .is_file(),
-        "It should've of generated a new rbxpm.lock file."
+        "It should've of generated a new gooey.lock file."
     )
 }
 
@@ -60,7 +60,7 @@ fn update_all_dependencies() {
 
     run_update(&project).unwrap();
 
-    let lockfile = fs::read_to_string(project.path().join("rbxpm.lock")).unwrap();
+    let lockfile = fs::read_to_string(project.path().join("gooey.lock")).unwrap();
     assert_snapshot!(lockfile);
 }
 
@@ -82,7 +82,7 @@ fn update_named_dependency() {
     )
     .unwrap();
 
-    let lockfile_contents = fs::read_to_string(project.path().join("rbxpm.lock")).unwrap();
+    let lockfile_contents = fs::read_to_string(project.path().join("gooey.lock")).unwrap();
     assert_snapshot!(lockfile_contents);
 }
 
@@ -104,7 +104,7 @@ fn update_required_dependency() {
     )
     .unwrap();
 
-    let lockfile_content = fs::read_to_string(project.path().join("rbxpm.lock")).unwrap();
+    let lockfile_content = fs::read_to_string(project.path().join("gooey.lock")).unwrap();
     assert_snapshot!(lockfile_content);
 }
 
@@ -129,7 +129,7 @@ fn update_list_of_specs() {
     )
     .unwrap();
 
-    let lockfile_content = fs::read_to_string(project.path().join("rbxpm.lock")).unwrap();
+    let lockfile_content = fs::read_to_string(project.path().join("gooey.lock")).unwrap();
     assert_snapshot!(lockfile_content);
 }
 

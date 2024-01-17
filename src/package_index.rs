@@ -276,7 +276,7 @@ fn index_path(index_url: &Url) -> anyhow::Result<PathBuf> {
 
     let path = dirs::cache_dir()
         .ok_or_else(|| anyhow!("could not find cache directory"))?
-        .join("rbxpm")
+        .join("gooey")
         .join("index")
         .join(ident);
 

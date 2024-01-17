@@ -12,7 +12,7 @@ use crate::manifest::Manifest;
 
 static EXCLUDED_GLOBS: &[&str] = &[
     ".*",
-    "rbxpm.lock",
+    "gooey.lock",
     "Packages",
     "ServerPackages",
     "DevPackages",
@@ -65,7 +65,7 @@ impl PackageContents {
                         log::info!(
                             "The project and package names are mismatched. The project name in \
                             `default.project.json` has been renamed to '{}' in the uploaded package \
-                            to match the name provided by `rbxpm.toml`",
+                            to match the name provided by `gooey.toml`",
                             package_name
                         );
 

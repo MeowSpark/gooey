@@ -10,8 +10,8 @@ use serde::{Deserialize, Serialize};
 use toml_edit::{table, value, Document, Item};
 
 const DEFAULT_AUTH_TOML: &str = r#"
-# This is where rbxpm stores details for authenticating with registries.
-# It can be updated using `rbxpm login` and `rbxpm logout`.
+# This is where gooey stores details for authenticating with registries.
+# It can be updated using `gooey login` and `gooey logout`.
 
 [tokens]
 
@@ -29,7 +29,7 @@ impl AuthStore {
 
         let auth = toml::from_str(&contents).with_context(|| {
             format!(
-                "Malformed rbxpm auth config file. Try deleting {}",
+                "Malformed gooey auth config file. Try deleting {}",
                 path.display()
             )
         })?;
@@ -85,7 +85,7 @@ impl AuthStore {
 
 fn file_path() -> anyhow::Result<PathBuf> {
     let mut path = dirs::home_dir().context("Failed to find home directory")?;
-    path.push(".rbxpm");
+    path.push(".gooey");
     path.push("auth.toml");
     Ok(path)
 }

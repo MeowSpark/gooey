@@ -2,15 +2,15 @@ use std::process::exit;
 
 use structopt::StructOpt;
 
-use librbxpm::Args;
+use libgooey::Args;
 
 fn main() {
     let args = Args::from_args();
 
     let log_filter = match args.global.verbosity {
-        0 => "librbxpm=info",
-        1 => "librbxpm=debug",
-        2 => "librbxpm=trace",
+        0 => "libgooey=info",
+        1 => "libgooey=debug",
+        2 => "libgooey=trace",
         _ => "trace",
     };
 

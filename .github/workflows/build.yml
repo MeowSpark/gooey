@@ -43,7 +43,7 @@ jobs:
       shell: bash
       run: |
         mkdir staging
-        cp "target/release/rbxpm.exe" staging/
+        cp "target/release/gooey.exe" staging/
         cd staging
         7z a ../release.zip *
 
@@ -53,7 +53,7 @@ jobs:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
         tag: ${{ inputs.tag }}
         file: release.zip
-        asset_name: rbxpm-${{ inputs.release_ref }}-win64.zip
+        asset_name: gooey-${{ inputs.release_ref }}-win64.zip
         overwrite: ${{ inputs.overwrite }}
         release_name: ${{ inputs.release_name }}
         body: ${{ inputs.release_body }}
@@ -83,7 +83,7 @@ jobs:
       shell: bash
       run: |
         mkdir staging
-        cp "target/release/rbxpm" staging/
+        cp "target/release/gooey" staging/
         cd staging
         zip ../release.zip *
 
@@ -93,7 +93,7 @@ jobs:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
         tag: ${{ inputs.tag }}
         file: release.zip
-        asset_name: rbxpm-${{ inputs.release_ref }}-macos.zip
+        asset_name: gooey-${{ inputs.release_ref }}-macos.zip
         overwrite: ${{ inputs.overwrite }}
         release_name: ${{ inputs.release_name }}
         body: ${{ inputs.release_body }}
@@ -118,7 +118,7 @@ jobs:
       shell: bash
       run: |
         mkdir staging
-        cp "target/release/rbxpm" staging/
+        cp "target/release/gooey" staging/
         cd staging
         zip ../release.zip *
 
@@ -128,7 +128,7 @@ jobs:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
         tag: ${{ inputs.tag }}
         file: release.zip
-        asset_name: rbxpm-${{ inputs.release_ref }}-linux.zip
+        asset_name: gooey-${{ inputs.release_ref }}-linux.zip
         overwrite: ${{ inputs.overwrite }}
         release_name: ${{ inputs.release_name }}
         body: ${{ inputs.release_body }}
