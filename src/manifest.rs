@@ -10,6 +10,14 @@ use crate::package_name::PackageName;
 use crate::package_req::PackageReq;
 
 pub const MANIFEST_FILE_NAME: &str = "gooey.toml";
+const DEFAULT_MANIFEST: &str = r#"[package]
+name = "placeholder/placeholder"
+version = "0.1.0"
+registry = "https://github.com/UpliftGames/wally-index"
+realm = "shared"
+
+[dependencies]
+"#;
 
 /// The contents of a `gooey.toml` file, which defines a package.
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -38,6 +46,12 @@ impl Manifest {
         let content = fs_err::read_to_string(&file_path)?;
         let manifest: Manifest = toml::from_str(&content)
             .with_context(|| format!("failed to parse manifest at path {}", file_path.display()))?;
+
+        Ok(manifest)
+    }
+
+    pub fn new() -> anyhow::Result<Manifest> {
+        let manifest: Manifest = Manifest::from_slice(DEFAULT_MANIFEST.as_bytes())?;
 
         Ok(manifest)
     }

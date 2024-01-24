@@ -1,8 +1,10 @@
 use std::ffi::OsString;
 use std::fs::DirEntry;
 use std::path::PathBuf;
-use crate::manifest::MANIFEST_FILE_NAME;
+use crate::manifest::{Manifest, MANIFEST_FILE_NAME};
 use crate::package_compat::WALLY_MANIFEST_FILE_NAME;
+use crate::package_compat::wally_compat::WallyPackageCompatibility;
+use crate::package_compat::wally_manifest::WallyManifest;
 
 #[derive(Debug)]
 pub struct PackageCompatibility {
@@ -55,19 +57,32 @@ fn handle_based_on_file_path(path: PathBuf) -> anyhow::Result<Option<String>> {
 }
 
 impl PackageCompatibility {
-    pub fn load_backwards_compatible_package(self) -> anyhow::Result<()> {
-        let best_layer_name = handle_based_on_file_path(self.path).expect("Fatal error while choosing package compatibility layer");
+    pub fn new(path: PathBuf) -> Self {
+        Self {
+            path,
+        }
+    }
+
+    pub fn load_backwards_compatible_package(self) -> anyhow::Result<Manifest> {
+        let best_layer_name = handle_based_on_file_path(self.path)?;
 
         match best_layer_name {
-            None => anyhow::bail!("No available package compatibility layer found"),
             Some(layer) => {
-                match layer.as_str() { // TODO
-                    MANIFEST_FILE_NAME => {}
-                    WALLY_MANIFEST_FILE_NAME => {}
+                match layer.as_str() {
+                    MANIFEST_FILE_NAME => {
+                        let manifest = Manifest::load(&self.path)?;
+                        Ok(manifest)
+                    }, // load manifest normally, return normal manifest.
+                    WALLY_MANIFEST_FILE_NAME => {
+                        let wally_manifest = WallyManifest::load(&self.path)?;
+                        let wally_compat = WallyPackageCompatibility::new(wally_manifest);
+                        let manifest = wally_compat.load_as_backwards_compatible_package()?;
+                        Ok(manifest)
+                    }, // load wally manifest & pass to wally_compat, then return normal manifest.
                     _ => anyhow::bail!("Unknown package compatibility layer {}", layer),
                 }
-            }
+            },
+            None => anyhow::bail!("No available package compatibility layer found")
         }
-        anyhow::bail!("No available package compatibility layer found")
     }
 }

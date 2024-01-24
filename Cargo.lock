@@ -1074,6 +1074,73 @@ dependencies = [
 ]
 
 [[package]]
+name = "gooey"
+version = "0.4.0"
+dependencies = [
+ "anyhow",
+ "blake3",
+ "crossterm",
+ "dirs",
+ "env_logger",
+ "fs-err",
+ "git2",
+ "globset",
+ "hex",
+ "indicatif",
+ "indoc",
+ "insta",
+ "log",
+ "once_cell",
+ "opener",
+ "reqwest",
+ "rpassword",
+ "semver 0.11.0",
+ "serde",
+ "serde_json",
+ "serial_test",
+ "structopt",
+ "tempfile",
+ "tokio",
+ "toml 0.5.8",
+ "toml_edit 0.2.0",
+ "ubyte",
+ "url",
+ "walkdir",
+ "whoami",
+ "zip",
+]
+
+[[package]]
+name = "gooey-registry-backend"
+version = "0.3.2"
+dependencies = [
+ "anyhow",
+ "async-trait",
+ "cloud-storage-lite",
+ "constant_time_eq",
+ "figment",
+ "fs-err",
+ "futures",
+ "git2",
+ "glob",
+ "gooey",
+ "moka",
+ "reqwest",
+ "rocket",
+ "rusoto_core",
+ "rusoto_s3",
+ "semver 0.11.0",
+ "serde",
+ "serde_json",
+ "tantivy",
+ "tempfile",
+ "tokio",
+ "url",
+ "walkdir",
+ "zip",
+]
+
+[[package]]
 name = "h2"
 version = "0.3.19"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2175,73 +2242,6 @@ dependencies = [
  "crossbeam-utils",
  "lazy_static",
  "num_cpus",
-]
-
-[[package]]
-name = "gooey"
-version = "0.3.2"
-dependencies = [
- "anyhow",
- "blake3",
- "crossterm",
- "dirs",
- "env_logger",
- "fs-err",
- "git2",
- "globset",
- "hex",
- "indicatif",
- "indoc",
- "insta",
- "log",
- "once_cell",
- "opener",
- "reqwest",
- "rpassword",
- "semver 0.11.0",
- "serde",
- "serde_json",
- "serial_test",
- "structopt",
- "tempfile",
- "tokio",
- "toml 0.5.8",
- "toml_edit 0.2.0",
- "ubyte",
- "url",
- "walkdir",
- "whoami",
- "zip",
-]
-
-[[package]]
-name = "gooey-registry-backend"
-version = "0.3.2"
-dependencies = [
- "anyhow",
- "async-trait",
- "cloud-storage-lite",
- "constant_time_eq",
- "figment",
- "fs-err",
- "futures",
- "git2",
- "glob",
- "moka",
- "gooey",
- "reqwest",
- "rocket",
- "rusoto_core",
- "rusoto_s3",
- "semver 0.11.0",
- "serde",
- "serde_json",
- "tantivy",
- "tempfile",
- "tokio",
- "url",
- "walkdir",
- "zip",
 ]
 
 [[package]]

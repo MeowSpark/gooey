@@ -1,9 +1,9 @@
 [package]
 name = "gooey"
 description = "Package manager for Roblox"
-version = "0.3.2"
+version = "0.4.0"
 license = "MPL-2.0"
-authors = ["Lucien Greathouse <lucien@uplift.games>"]
+authors = ["Carter Schuller (a.k.a. moo1210) <carterschuller@meowspark.com>"]
 edition = "2018"
 
 [workspace]

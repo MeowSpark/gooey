@@ -3,8 +3,7 @@ mod wally_package_id;
 mod wally_package_name;
 mod wally_package_req;
 mod compat;
-
-//mod wally_compat;
+mod wally_compat;
 
 pub use compat::PackageCompatibility;
 

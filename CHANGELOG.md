@@ -2,6 +2,11 @@
 
 ## Unreleased Changes
 
+## 0.4.0 
+
+
+# Pre-fork Changes
+
 ## 0.3.2 (2023-06-05)
 * Added private field to package manifest ([#9])([#76])
 * Improved lockfile generation **lockfiles will change** ([#130])
