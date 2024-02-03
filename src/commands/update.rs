@@ -5,7 +5,7 @@ use std::time::Duration;
 
 use crate::installation::InstallationContext;
 use crate::lockfile::Lockfile;
-use crate::manifest::Manifest;
+use crate::package_compat;
 use crate::package_id::PackageId;
 use crate::package_name::PackageName;
 use crate::package_req::PackageReq;
@@ -15,7 +15,7 @@ use crossterm::style::{Attribute, Color, SetAttribute, SetForegroundColor};
 use indicatif::{ProgressBar, ProgressStyle};
 use structopt::StructOpt;
 
-/// Update all of the dependencies of this project.
+/// Update all of the dependencies of this project. (cross-compatible with other package formats)
 #[derive(Debug, StructOpt)]
 pub struct UpdateSubcommand {
     /// Path to the project to publish.
@@ -29,7 +29,7 @@ pub struct UpdateSubcommand {
 
 impl UpdateSubcommand {
     pub fn run(self, global: GlobalOptions) -> anyhow::Result<()> {
-        let manifest = Manifest::load(&self.project_path)?;
+        let manifest = package_compat::load_backwards_compatible_package(&self.project_path)?;
 
         let lockfile = match Lockfile::load(&self.project_path)? {
             Some(lockfile) => lockfile,

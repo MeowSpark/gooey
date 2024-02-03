@@ -2,7 +2,7 @@ use std::path::PathBuf;
 
 use structopt::StructOpt;
 
-use crate::manifest::Manifest;
+use crate::package_compat;
 
 /// Print a gooey manifest as a line of JSON.
 ///
@@ -16,7 +16,7 @@ pub struct ManifestToJsonSubcommand {
 
 impl ManifestToJsonSubcommand {
     pub fn run(self) -> anyhow::Result<()> {
-        let manifest = Manifest::load(&self.project_path)?;
+        let manifest = package_compat::load_backwards_compatible_package(&self.project_path)?;
         println!("{}", serde_json::to_string(&manifest)?);
 
         Ok(())

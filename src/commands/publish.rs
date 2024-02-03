@@ -6,7 +6,7 @@ use ubyte::ToByteUnit;
 use url::Url;
 
 use crate::{
-    auth::AuthStore, manifest::Manifest, package_contents::PackageContents,
+    auth::AuthStore, package_compat, package_contents::PackageContents,
     package_index::PackageIndex, GlobalOptions,
 };
 
@@ -26,7 +26,7 @@ pub struct PublishSubcommand {
 
 impl PublishSubcommand {
     pub fn run(self, global: GlobalOptions) -> anyhow::Result<()> {
-        let manifest = Manifest::load(&self.project_path)?;
+        let manifest = package_compat::load_backwards_compatible_package(&self.project_path)?;
 
         if manifest.package.private {
             bail!("Cannot publish private package.");

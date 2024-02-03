@@ -8,14 +8,14 @@ use structopt::StructOpt;
 
 use crate::installation::InstallationContext;
 use crate::lockfile::{LockPackage, Lockfile};
-use crate::manifest::Manifest;
+use crate::package_compat;
 use crate::package_id::PackageId;
 use crate::package_source::{PackageSource, PackageSourceMap, Registry, TestRegistry};
 use crate::resolution::resolve;
 
 use super::GlobalOptions;
 
-/// Install all of the dependencies of this project.
+/// Install all of the dependencies of this project. (cross-compatible with other package formats)
 #[derive(Debug, StructOpt)]
 pub struct InstallSubcommand {
     /// Path to the project to install dependencies for.
@@ -25,7 +25,7 @@ pub struct InstallSubcommand {
 
 impl InstallSubcommand {
     pub fn run(self, global: GlobalOptions) -> anyhow::Result<()> {
-        let manifest = Manifest::load(&self.project_path)?;
+        let manifest = package_compat::load_backwards_compatible_package(&self.project_path)?;
 
         let lockfile = Lockfile::load(&self.project_path)?
             .unwrap_or_else(|| Lockfile::from_manifest(&manifest));

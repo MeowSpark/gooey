@@ -9,11 +9,7 @@ use reqwest::Url;
 use serde::Deserialize;
 use structopt::StructOpt;
 
-use crate::{
-    auth::AuthStore,
-    manifest::Manifest,
-    package_index::{PackageIndex, PackageIndexConfig},
-};
+use crate::{auth::AuthStore, package_compat, package_index::{PackageIndex, PackageIndexConfig}};
 
 /// Log into a registry.
 #[derive(Debug, StructOpt)]
@@ -111,7 +107,7 @@ fn prompt_github_auth(api: url::Url, github_oauth_id: &str) -> anyhow::Result<()
 }
 
 fn fetch_package_index_config(project_path: &Path) -> anyhow::Result<PackageIndexConfig> {
-    let manifest = Manifest::load(project_path)?;
+    let manifest = package_compat::load_backwards_compatible_package(project_path)?;
     let registry = Url::parse(&manifest.package.registry)?;
     let package_index = PackageIndex::new(&registry, None)?;
     package_index.config()

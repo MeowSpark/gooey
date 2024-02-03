@@ -2,7 +2,7 @@ use std::path::PathBuf;
 
 use structopt::StructOpt;
 
-use crate::{auth::AuthStore, manifest::Manifest, package_index::PackageIndex};
+use crate::{auth::AuthStore, package_compat, package_index::PackageIndex};
 
 /// Log out of a registry.
 #[derive(Debug, StructOpt)]
@@ -14,7 +14,7 @@ pub struct LogoutSubcommand {
 
 impl LogoutSubcommand {
     pub fn run(self) -> anyhow::Result<()> {
-        let manifest = Manifest::load(&self.project_path)?;
+        let manifest = package_compat::load_backwards_compatible_package(&self.project_path)?;
         let registry = url::Url::parse(&manifest.package.registry)?;
         let package_index = PackageIndex::new(&registry, None)?;
         let api = package_index.config()?.api;

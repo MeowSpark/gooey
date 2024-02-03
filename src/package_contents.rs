@@ -7,8 +7,7 @@ use globset::{Glob, GlobSet, GlobSetBuilder};
 use serde_json::json;
 use walkdir::WalkDir;
 use zip::{write::FileOptions, ZipArchive, ZipWriter};
-
-use crate::manifest::Manifest;
+use crate::package_compat;
 
 static EXCLUDED_GLOBS: &[&str] = &[
     ".*",
@@ -27,7 +26,7 @@ pub struct PackageContents {
 
 impl PackageContents {
     pub fn pack_from_path(input: &Path) -> anyhow::Result<Self> {
-        let manifest = Manifest::load(input)?;
+        let manifest = package_compat::load_backwards_compatible_package(input)?;
         let package_name = manifest.package.name.name();
 
         let mut data = Vec::new();
@@ -94,7 +93,7 @@ impl PackageContents {
     }
 
     pub fn filtered_contents(input: &Path) -> anyhow::Result<Vec<PathBuf>> {
-        let manifest = Manifest::load(input)?;
+        let manifest = package_compat::load_backwards_compatible_package(input)?;
         let includes = manifest.package.include;
         let mut excludes = manifest.package.exclude;
 
